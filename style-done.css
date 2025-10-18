@@ -1,0 +1,219 @@
+/* ============================================
+           🎨 ЗДЕСЬ НАЧИНАЕТСЯ МАГИЯ CSS! 
+           Меняйте значения переменных ниже!
+           ============================================ */
+
+:root {
+    /* 🎨 ЦВЕТА ШАПКИ */
+    --header-bg: #1a237e; /* Цвет фона шапки */
+    --header-text: #ffffff; /* Цвет текста шапки */
+
+    /* 🎨 ЦВЕТА ГЛАВНОГО БЛОКА */
+    --hero-bg-start: #3949ab; /* Начальный цвет градиента */
+    --hero-bg-end: #5c6bc0; /* Конечный цвет градиента */
+    --hero-text: #ffffff; /* Цвет текста главного блока */
+
+    /* 🎨 ЦВЕТА КАРТОЧЕК */
+    --card-bg: #ffffff; /* Цвет фона карточек */
+    --card-text: #666666; /* Цвет текста карточек */
+    --card-title: #1a237e; /* Цвет заголовков карточек */
+    --card-hover-bg: #f5f7ff; /* Цвет карточки при наведении */
+
+    /* 🎨 ЦВЕТА ПОДВАЛА */
+    --footer-bg: #263238; /* Цвет фона подвала */
+    --footer-text: #ffffff; /* Цвет текста подвала */
+
+    /* 🎨 ЦВЕТА ФОНА СЕКЦИЙ */
+    --programs-bg: #f8f9fa; /* Цвет фона секции программ */
+    --section-title: #1a237e; /* Цвет заголовка секции */
+
+    /* 📝 ШРИФТЫ */
+    --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --header-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* 📏 РАЗМЕРЫ ТЕКСТА */
+    --header-size: 42px; /* Размер главного заголовка */
+    --hero-title-size: 36px; /* Размер заголовка hero */
+    --section-title-size: 32px; /* Размер заголовка секции */
+    --card-title-size: 22px; /* Размер заголовка карточки */
+    --text-size: 18px; /* Размер обычного текста */
+    --small-text-size: 16px; /* Размер мелкого текста */
+
+    /* ✨ СКРУГЛЕНИЯ */
+    --header-radius: 0px; /* Скругление шапки */
+    --card-radius: 12px; /* Скругление карточек */
+    --button-radius: 8px; /* Скругление кнопок */
+
+    /* 🌑 ТЕНИ */
+    --header-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+    /* 📐 ОТСТУПЫ */
+    --header-padding: 24px; /* Отступы шапки */
+    --hero-padding: 60px; /* Отступы hero */
+    --card-padding: 28px; /* Отступы карточек */
+    --section-padding: 60px; /* Отступы секций */
+
+    /* 📊 РАССТОЯНИЯ */
+    --card-gap: 24px; /* Расстояние между карточками */
+    --section-gap: 0px; /* Расстояние между секциями */
+
+    /* 🎭 ПРОЗРАЧНОСТЬ */
+    --header-opacity: 1; /* Прозрачность шапки */
+    --card-opacity: 1; /* Прозрачность карточек */
+
+    /* 🔤 ТОЛЩИНА ШРИФТА */
+    --header-weight: 600; /* Толщина заголовков */
+    --text-weight: 400; /* Толщина текста */
+
+    /* 📏 ВЫСОТА СТРОКИ */
+    --text-line-height: 1.6; /* Высота строки текста */
+    --title-line-height: 1.2; /* Высота строки заголовков */
+}
+
+/* ============================================
+           Дальше идёт основной код CSS
+           Вы можете его не трогать :)
+           ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--main-font);
+    line-height: var(--text-line-height);
+    font-weight: var(--text-weight);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Шапка сайта */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: calc(var(--header-padding) * 2);
+    text-align: center;
+    box-shadow: var(--header-shadow);
+    opacity: var(--header-opacity);
+    border-radius: var(--header-radius);
+}
+
+header h1 {
+    font-family: var(--header-font);
+    font-size: var(--header-size);
+    margin-bottom: 10px;
+    font-weight: var(--header-weight);
+    line-height: var(--title-line-height);
+}
+
+header p {
+    font-size: var(--text-size);
+    opacity: 0.95;
+}
+
+/* Главный блок */
+.hero {
+    background: linear-gradient(
+        135deg,
+        var(--hero-bg-start) 0%,
+        var(--hero-bg-end) 100%
+    );
+    color: var(--hero-text);
+    padding: calc(var(--hero-padding) * 1.5) var(--hero-padding);
+    text-align: center;
+    margin-bottom: var(--section-gap);
+}
+
+.hero h2 {
+    font-family: var(--header-font);
+    font-size: var(--hero-title-size);
+    margin-bottom: 20px;
+    font-weight: var(--header-weight);
+    line-height: var(--title-line-height);
+}
+
+.hero p {
+    font-size: var(--text-size);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: var(--text-line-height);
+    opacity: 0.95;
+}
+
+/* Секция с карточками */
+.programs {
+    padding: var(--section-padding) calc(var(--section-padding) / 3);
+    background-color: var(--programs-bg);
+    margin-bottom: var(--section-gap);
+    flex-grow: 1;
+}
+
+.programs h2 {
+    font-family: var(--header-font);
+    text-align: center;
+    font-size: var(--section-title-size);
+    margin-bottom: calc(var(--section-padding) / 1.5);
+    color: var(--section-title);
+    font-weight: var(--header-weight);
+    line-height: var(--title-line-height);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--card-gap);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    padding: var(--card-padding);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    opacity: var(--card-opacity);
+    transition: all 0.3s ease;
+}
+
+.card h3 {
+    font-family: var(--header-font);
+    font-size: var(--card-title-size);
+    margin-bottom: 12px;
+    color: var(--card-title);
+    font-weight: var(--header-weight);
+    line-height: var(--title-line-height);
+}
+
+.card p {
+    font-size: var(--small-text-size);
+    line-height: var(--text-line-height);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-hover-shadow);
+    background-color: var(--card-hover-bg);
+}
+
+/* Подвал */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: calc(var(--section-padding) / 2);
+    text-align: center;
+    margin-top: var(--section-gap);
+}
+
+footer p {
+    font-size: calc(var(--text-size) * 0.9);
+    margin: 8px 0;
+    line-height: var(--text-line-height);
+    opacity: 0.9;
+}
